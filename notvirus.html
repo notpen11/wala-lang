@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚠️ Virus Detected!</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 50px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 36px;
+      text-shadow: 0 0 10px red;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px;
+    }
+    .blink {
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    }
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    .countdown {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    // Fake countdown timer
+    var timeLeft = 60; // seconds
+    function countdown() {
+      var timer = document.getElementById('timer');
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        timer.innerHTML = "Your data is being deleted!";
+      } else {
+        timer.innerHTML = timeLeft + " seconds remaining";
+      }
+      timeLeft -= 1;
+    }
+    var countdownInterval = setInterval(countdown, 1000);
+  </script>
+</head>
+<body>
+  <h1 class="blink">⚠️ WARNING! VIRUS DETECTED ⚠️</h1>
+  <p>Your Android phone is infected with a critical virus!</p>
+  <p>Do not close this page or your data may be lost.</p>
+  <p>Contact support or your phone will shut down!</p>
+  <p class="countdown" id="timer">60 seconds remaining</p>
+</body>
+</html>
